@@ -103,16 +103,26 @@ class ToDoList {
     int taskSummary;
     taskSummary = todos.length;
     print('Task summary :  $taskSummary');
-    int totalCategories;
-    var map = { for (var todos in todos) todos.category : todos.name };
-    print(map);
+
+    List listCategories = [];
+     for (int i = 0; i < todos.length; i++) {
+       listCategories.add(todos[i].category);
+     }
+
+     //print(listCategories);
 
 
+     Map<String,int> map = {};
 
+     for (String cat in listCategories) {
+       if (map.containsKey(cat)) {
+         map.update(cat, (value) => map[cat]!+1);
+       } else {
+         map.putIfAbsent(cat, () => 1);
+       }
+     }
 
-    totalCategories = map.length;
-
-    print('Categories summary : $totalCategories');
+     print(map);
   }
 
 
