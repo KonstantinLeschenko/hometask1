@@ -5,10 +5,10 @@ import 'todolist.dart';
 void main() {
 
   bool isRunning = true;
-  var todosiki = ToDoList();
+  var mToDo = ToDoList();
 
 
-  todosiki.showList();
+  mToDo.showList();
 
 
   while (isRunning) {
@@ -17,19 +17,19 @@ void main() {
 
     switch (input) {
       case "add":
-        todosiki.addElement();
+        mToDo.addElement();
         break;
       case "group":
-        todosiki.addGroup();
+        mToDo.addGroup();
         break;
       case "del":
-        todosiki.deleteTask();
+        mToDo.deleteTask();
         break;
       case "tasks":
-        todosiki.showList();
+        mToDo.showList();
         break;
       case "stat":
-        todosiki.statistic();
+        mToDo.statistic();
         break;
       default:
         print('Unknown command');
