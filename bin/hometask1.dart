@@ -7,28 +7,29 @@ void main() {
   bool isRunning = true;
   var todosiki = ToDoList();
 
+
   todosiki.showList();
 
 
   while (isRunning) {
     //stdout.writeln("Выберите действие и введите одну из комманд: \n ADD \n EDIT \n DELETE \n LIST \n TASKS");
-    stdout.writeln(' To add 1 element type ADD \n To add group elements type GROUP \n To remove element by ID type DEL \n to see all tasks type TASKS \n to see statistics type STAT');
+    stdout.writeln(' To add 1 element type \x1B[31m add \x1B[0m \n To add group elements type \x1B[31m group \x1B[0m \n To remove element by ID type \x1B[31m del \x1B[0m \n to see all tasks type \x1B[31m tasks \x1B[0m \n to see statistics type \x1B[31m stat \x1B[0m');
     String input = stdin.readLineSync().toString();
 
     switch (input) {
-      case "ADD":
+      case "add":
         todosiki.addElement();
         break;
-      case "GROUP":
+      case "group":
         todosiki.addGroup();
         break;
-      case "DEL":
+      case "del":
         todosiki.deleteTask();
         break;
-      case "TASKS":
+      case "tasks":
         todosiki.showList();
         break;
-      case "STAT":
+      case "stat":
         todosiki.statistic();
         break;
       default:
@@ -37,14 +38,14 @@ void main() {
     }
 
 
-    stdout.writeln("Продолжить: \n YES \n NO");
+    stdout.writeln("Continue?: \n \x1B[31m yes \x1B[0m \n \x1B[31m no \x1B[0m");
     String answer = stdin.readLineSync().toString();
 
     switch (answer) {
-      case "YES":
+      case "yes":
         isRunning = true;
         break;
-      case "NO":
+      case "no":
         isRunning = false;
         break;
       default:
