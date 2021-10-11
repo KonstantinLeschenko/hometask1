@@ -14,7 +14,6 @@ class ToDoList {
 
 
   void createList() {
-    //List<Task> todos = [];
     todos.add(todo);
     todos.add(todo1);
     todos.add(todo2);
@@ -37,13 +36,11 @@ class ToDoList {
     stdout.writeln('Enter ID of the task to delete');
     String ids = stdin.readLineSync().toString();
     int id = int.parse(ids);
-    //print(id);
     int position = -1;
 
     for (int i = 0; i < todos.length; i++) {
       if (todos[i].id == id) position = i;
     }
-    //print(position);
     if (position > 0) {
       todos.removeAt(position);
 
@@ -56,7 +53,6 @@ class ToDoList {
   }
 
   void addElement() {
-    //showList();
     int newID = 0;
     for (int i = 0; i<todos.length-1; i++) {
       newID = todos[i].id;
@@ -109,9 +105,6 @@ class ToDoList {
        listCategories.add(todos[i].category);
      }
 
-     //print(listCategories);
-
-
      Map<String,int> map = {};
 
      for (String cat in listCategories) {
@@ -123,6 +116,8 @@ class ToDoList {
      }
 
      print(map);
+
+
   }
 
 
