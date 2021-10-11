@@ -12,7 +12,7 @@ void main() {
 
 
   while (isRunning) {
-        stdout.writeln(' To add 1 element type \x1B[31m add \x1B[0m \n To add group elements type \x1B[31m group \x1B[0m \n To remove element by ID type \x1B[31m del \x1B[0m \n to see all tasks type \x1B[31m tasks \x1B[0m \n to see statistics type \x1B[31m stat \x1B[0m');
+    stdout.writeln(' To add 1 element type \x1B[31m add \x1B[0m \n To add group elements type \x1B[31m group \x1B[0m \n To remove element by ID type \x1B[31m del \x1B[0m \n to see all tasks type \x1B[31m tasks \x1B[0m \n to see statistics type \x1B[31m stat \x1B[0m');
     String input = stdin.readLineSync().toString();
 
     switch (input) {
